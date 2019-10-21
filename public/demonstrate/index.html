@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="home-container">
+        <div class="top"></div>
+        <div class="middle">
+            <div class="middle-left">
+                <div class="sub-title">各品类回收总量</div>
+                <div v-for="(item,index) in leftTopData" :key="index" class="circle-item">
+                    <div :id="'inner-circle-' + (index + 1)" class="inner-circle"></div>
+                    <div class="outer-circle">
+                        <p style="font-size:20px;">{{item.percentage}}%</p>
+                        <p style="font-size:12px;">{{item.weight}}kg</p>
+                        <p style="font-size:14px;">{{item.name}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="middle-center">
+                <div class="middle-center-bg-con">
+                    <img class="middle-center-bg" src="./src/imgs/data_10.png" alt="" />
+                    <div id="middle-center-pie" style="width:78%;height:78%;margin-left:11%"></div>
+                    <div class="graduation">
+                        <p v-for="(item,index) in productsWeight.user_data.rang" v-text="item"></p>
+                    </div>
+                    <div class="center-font-con">
+                        <p>累计用户（人）</p>
+                        <p v-text="productsWeight.user_data.user_count"></p>
+                    </div>
+                    <ul class="bottom-btn">
+                        <li>
+                            <p>回收废品总量(kg)</p>
+                            <p v-text="productsWeight.total_weight || 0"></p>
+                        </li>
+                        <li>
+                            <p>回收饮料瓶总量(个)</p>
+                            <p v-text="productsWeight.total_weight || 0"></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="middle-right">
+                <div class="middle-right-top">
+                    <div class="sub-title">今日回收数据</div>
+                    <div id="middle-right-top-pie" style="width:50%;height:100%"></div>
+                    <div class="recycle-container">
+                        <p>今日回收总量(kg)</p>
+                        <p style="font-size:36px" v-text="todayWeight.total"></p>
+                        <ul class="recycle-colors">
+                            <li>
+                                <span class="parper">纸张</span>
+                            </li>
+                            <li>
+                                <span class="pet">饮料瓶</span>
+                            </li>
+                            <li>
+                                <span class="cloth">布料</span>
+                            </li>
+                            <li>
+                                <span class="plastics">塑料</span>
+                            </li>
+                            <li>
+                                <span class="metal">金属</span>
+                            </li>
+                            <li>
+                                <span class="glass">玻璃</span>
+                            </li>
+                            <li>
+                                <span class="parper2">纸张2</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="middle-right-bottom">
+                    <div class="sub-title">近七日垃圾回收总量</div>
+                    <div id="middle-right-middle-bar" style="width:100%;height:100%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="bottom-left">
+                <div class="sub-title">节约资源总量</div>
+                <div class="bottom-left-bg-con">
+                    <img class="bottom-left-bg" src="./src/imgs/data_11.png" alt="" />
+                </div>
+                <p class="natural" v-text="(productsWeight.natural.natural || 0) + '公斤'"></p>
+                <p class="landfill" v-text="(productsWeight.natural.landfill || 0) + '公斤'"></p>
+                <p class="coal" v-text="(productsWeight.natural.coal || 0) + '公斤'"></p>
+                <p class="fire" v-text="(productsWeight.natural.fire || 0) + '公斤'"></p>
+            </div>
+            <div class="bottom-center">
+                <div class="sub-title">设备状态</div>
+                <div class="left-inner-middle-center">
+                    <img src="./src/imgs/data_12.png" alt="" />
+                    <div class="font-container">
+                        <p>当前总设备数</p>
+                        <p style="font-size:30px" v-text="recycleStatisData.total"></p>
+                    </div>
+                </div>
+                <div class="right-inner-middle-center">
+                    <ul v-if="machineList.length > 0">
+                        <li class="mechaine-container">
+                            <span class="label-font">故障设备：</span>
+                            <span v-for="(list,iindex) in machineList[0].list" :key="iindex" class="gray-list-item" :class="list.active ? 'active1' : ''"></span>
+                        </li>
+                        <li class="mechaine-container">
+                            <span class="label-font">掉线设备：</span>
+                            <span v-for="(list,iindex) in machineList[1].list" :key="iindex" class="gray-list-item" :class="list.active ? 'active2' : ''"></span>
+                        </li>
+                        <li class="mechaine-container">
+                            <span class="label-font">满载设备：</span>
+                            <span v-for="(list,iindex) in machineList[2].list" :key="iindex" class="gray-list-item" :class="list.active ? 'active3' : ''"></span>
+                        </li>
+                        <li class="mechaine-container">
+                            <span class="label-font">未清运设备：</span>
+                            <span v-for="(list,iindex) in machineList[3].list" :key="iindex" class="gray-list-item" :class="list.active ? 'active4' : ''"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-right">
+                <div class="sub-title">近7日人均数据</div>
+                <div id="middle-right-bottom-line" style="width:100%;height:100%"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./src/js/vue.min.js" charset="utf-8"></script>
+    <script src="./src/js/echarts.min.js" charset="utf-8"></script>
+    <script src="./js/jquery.min.js" charset="utf-8"></script>
+    <script src="./js/common.js" charset="utf-8"></script>
+    <script src="./js/json.js" charset="utf-8"></script>
+    <script src="./js/main.js" charset="utf-8"></script>
+</body>
+</html>
