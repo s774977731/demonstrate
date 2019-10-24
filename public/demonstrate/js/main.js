@@ -47,8 +47,17 @@ new Vue({
         this.getTodayWeight();
         this.getSevenWeight();
         this.getSevenPerCapita();
+        this.handleWindowResize();
     },
     methods:{
+        //监听屏幕改变
+        handleWindowResize() {
+            window.onresize = function () {  //监听屏幕的改变
+                setTimeout(function () {
+                    window.location.reload();
+                })
+            };
+        },
         //获取数据
         handleGetData:function () {
 
