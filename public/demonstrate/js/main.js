@@ -312,6 +312,9 @@ new Vue({
                         type: 'pie',
                         radius : '55%',
                         center: ['50%', '60%'],
+                        label:{
+                            formatter:'{d}%'
+                        },
                         data:lists,
                         itemStyle: {
                             emphasis: {
