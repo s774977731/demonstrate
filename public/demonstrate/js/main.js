@@ -12,27 +12,31 @@ new Vue({
         ],
         machineList:[{
                 name:'故障设备',
+                number:0,
                 list:[
                     {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},
-                    {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},
+                    {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0}
                 ]
             },{
                 name:'掉线设备',
+                number:0,
                 list:[
                     {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},
-                    {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},
+                    {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0}
                 ]
             },{
                 name:'满载设备',
+                number:0,
                 list:[
                     {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},
-                    {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},
+                    {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0}
                 ]
             },{
                 name:'未清运设备',
+                number:0,
                 list:[
                     {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},
-                    {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},
+                    {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0}
                 ]
         }],
         productsWeight:{user_data:{rang:[]},products_percentage:{},natural:{}},
@@ -83,7 +87,8 @@ new Vue({
                         if(item == 5) {tempObj.name = '塑料';tempObj.color = '#00CAA2';}
                         if(item == 6) {tempObj.name = '玻璃';tempObj.color = '#CC5EFF';}
                         if(item == 7) {tempObj.name = '纸类2';tempObj.color = '#FFFFFF';}
-                        if(item != 7) tempList.push(tempObj);
+                        tempObj.weight = tempObj.weight.toFixed(2);
+                        tempList.push(tempObj);
                     });
                     _this.leftTopData = tempList;
                     _this.$nextTick(function () {
@@ -106,21 +111,25 @@ new Vue({
                     _this.machineList[0].list.forEach(function (item,index) {
                         if(index < _this.recycleStatisData.fault_num) {
                             _this.$set(_this.machineList[0].list[index],'active',1);
+                            _this.machineList[0].number += 1;
                         }
                     })
                     _this.machineList[1].list.forEach(function (item,index) {
                         if(index < _this.recycleStatisData.donline_num) {
                             _this.$set(_this.machineList[1].list[index],'active',1);
+                            _this.machineList[1].number += 1;
                         }
                     })
                     _this.machineList[2].list.forEach(function (item,index) {
                         if(index < _this.recycleStatisData.full_num) {
                             _this.$set(_this.machineList[2].list[index],'active',1);
+                            _this.machineList[2].number += 1;
                         }
                     })
                     _this.machineList[3].list.forEach(function (item,index) {
                         if(index < _this.recycleStatisData.no_clean_num) {
                             _this.$set(_this.machineList[3].list[index],'active',1);
+                            _this.machineList[3].number += 1;
                         }
                     })
                 }

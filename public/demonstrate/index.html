@@ -108,18 +108,22 @@
                         <li class="mechaine-container">
                             <span class="label-font">故障设备：</span>
                             <span v-for="(list,iindex) in machineList[0].list" :key="iindex" class="gray-list-item" :class="list.active ? 'active1' : ''"></span>
+                            <span v-text="machineList[0].number"></span>
                         </li>
                         <li class="mechaine-container">
                             <span class="label-font">掉线设备：</span>
                             <span v-for="(list,iindex) in machineList[1].list" :key="iindex" class="gray-list-item" :class="list.active ? 'active2' : ''"></span>
+                            <span v-text="machineList[1].number"></span>
                         </li>
                         <li class="mechaine-container">
                             <span class="label-font">满载设备：</span>
                             <span v-for="(list,iindex) in machineList[2].list" :key="iindex" class="gray-list-item" :class="list.active ? 'active3' : ''"></span>
+                            <span v-text="machineList[2].number"></span>
                         </li>
                         <li class="mechaine-container">
                             <span class="label-font">未清运设备：</span>
                             <span v-for="(list,iindex) in machineList[3].list" :key="iindex" class="gray-list-item" :class="list.active ? 'active4' : ''"></span>
+                            <span v-text="machineList[3].number"></span>
                         </li>
                     </ul>
                 </div>
