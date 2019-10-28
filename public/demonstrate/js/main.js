@@ -86,7 +86,7 @@ new Vue({
                         if(item == 4) {tempObj.name = '布料';tempObj.color = '#0A00D9';}
                         if(item == 5) {tempObj.name = '塑料';tempObj.color = '#00CAA2';}
                         if(item == 6) {tempObj.name = '玻璃';tempObj.color = '#CC5EFF';}
-                        if(item == 7) {tempObj.name = '纸类2';tempObj.color = '#FFFFFF';}
+                        if(item == 7) {tempObj.name = '纸类';tempObj.color = '#FFFFFF';}
                         tempObj.weight = tempObj.weight.toFixed(2);
                         tempList.push(tempObj);
                     });
