@@ -52,6 +52,9 @@ new Vue({
         this.getSevenWeight();
         this.getSevenPerCapita();
         this.handleWindowResize();
+        setInterval(function() {
+            window.location.reload();
+        }, 20*60*1000);
     },
     methods:{
         //监听屏幕改变
