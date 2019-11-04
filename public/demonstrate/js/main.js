@@ -111,30 +111,58 @@ new Vue({
                 success:function (res) {
                     _this.recycleStatisData = res;
                     // _this.recycleStatisData = recycleStatisData;
-                    _this.machineList[0].list.forEach(function (item,index) {
-                        if(index < _this.recycleStatisData.fault_num) {
+                    if(_this.recycleStatisData.fault_num > 18) {
+                        _this.machineList[0].list.forEach(function (item,index) {
                             _this.$set(_this.machineList[0].list[index],'active',1);
-                            _this.machineList[0].number += 1;
-                        }
-                    })
-                    _this.machineList[1].list.forEach(function (item,index) {
-                        if(index < _this.recycleStatisData.donline_num) {
+                        })
+                        _this.machineList[0].number = _this.recycleStatisData.fault_num;
+                    }else {
+                        _this.machineList[0].list.forEach(function (item,index) {
+                            if(index < _this.recycleStatisData.fault_num) {
+                                _this.$set(_this.machineList[0].list[index],'active',1);
+                                _this.machineList[0].number += 1;
+                            }
+                        })
+                    }
+                    if(_this.recycleStatisData.donline_num > 18) {
+                        _this.machineList[1].list.forEach(function (item,index) {
                             _this.$set(_this.machineList[1].list[index],'active',1);
-                            _this.machineList[1].number += 1;
-                        }
-                    })
-                    _this.machineList[2].list.forEach(function (item,index) {
-                        if(index < _this.recycleStatisData.full_num) {
+                        })
+                        _this.machineList[1].number = _this.recycleStatisData.donline_num;
+                    }else {
+                        _this.machineList[1].list.forEach(function (item,index) {
+                            if(index < _this.recycleStatisData.donline_num) {
+                                _this.$set(_this.machineList[1].list[index],'active',1);
+                                _this.machineList[1].number += 1;
+                            }
+                        })
+                    }
+                    if(_this.recycleStatisData.full_num > 18) {
+                        _this.machineList[2].list.forEach(function (item,index) {
                             _this.$set(_this.machineList[2].list[index],'active',1);
-                            _this.machineList[2].number += 1;
-                        }
-                    })
-                    _this.machineList[3].list.forEach(function (item,index) {
-                        if(index < _this.recycleStatisData.no_clean_num) {
+                        })
+                        _this.machineList[2].number = _this.recycleStatisData.full_num;
+                    }else {
+                        _this.machineList[2].list.forEach(function (item,index) {
+                            if(index < _this.recycleStatisData.full_num) {
+                                _this.$set(_this.machineList[2].list[index],'active',1);
+                                _this.machineList[2].number += 1;
+                            }
+                        })
+                    }
+                    if(_this.recycleStatisData.no_clean_num > 18) {
+                        _this.machineList[3].list.forEach(function (item,index) {
                             _this.$set(_this.machineList[3].list[index],'active',1);
-                            _this.machineList[3].number += 1;
-                        }
-                    })
+                        })
+                        _this.machineList[3].number = _this.recycleStatisData.no_clean_num;
+                    }else {
+                        _this.machineList[3].list.forEach(function (item,index) {
+                            if(index < _this.recycleStatisData.no_clean_num) {
+                                _this.$set(_this.machineList[3].list[index],'active',1);
+                                _this.machineList[3].number += 1;
+                            }
+                        })
+                    }
                 }
             })
         },
