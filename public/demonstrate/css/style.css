@@ -254,12 +254,11 @@ canvas {
 .middle-left .circle-item {
     display: inline-block;
     width: 50%;
-    margin-top: -7px;
-    /* margin: 20px auto 0; */
+    margin-top:-2%;
 }
 .middle-left .outer-circle {
-    width: 98px;
-    height: 98px;
+    width: 80px;
+    height: 80px;
     border:1px solid #2773E6;
     border-radius: 100px;
     margin: auto;
@@ -269,15 +268,15 @@ canvas {
     align-items: center;
     text-align: center;
     position: relative;
-    margin-top: -110px;
+    margin-top: -90px;
 }
 .middle-left .inner-circle {
     position: relative;
-    left: -24px;
+    left: -20px;
     top: 20px;
     z-index: 2;
-    width:162px;
-    height:162px;
+    width:140px;
+    height:140px;
     margin: auto;
     transform: rotate(-90deg);
 }

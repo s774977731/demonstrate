@@ -15,28 +15,28 @@ new Vue({
                 number:0,
                 list:[
                     {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},
-                    {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0}
+                    {active:0},{active:0},{active:0}
                 ]
             },{
                 name:'掉线设备',
                 number:0,
                 list:[
                     {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},
-                    {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0}
+                    {active:0},{active:0},{active:0}
                 ]
             },{
                 name:'满载设备',
                 number:0,
                 list:[
                     {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},
-                    {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0}
+                    {active:0},{active:0},{active:0}
                 ]
             },{
                 name:'未清运设备',
                 number:0,
                 list:[
                     {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},
-                    {active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0},{active:0}
+                    {active:0},{active:0},{active:0}
                 ]
         }],
         productsWeight:{user_data:{rang:[]},products_percentage:{},natural:{}},
