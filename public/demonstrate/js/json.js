@@ -17,7 +17,7 @@ var productsWeight = {
     },
     "products_percentage": { //垃圾桶百分比
         "1": {
-            "percentage": 2.5, //占比
+            "percentage": 95, //占比
             "weight": "143098.00"  //个数
         },
         "2": {
@@ -37,12 +37,8 @@ var productsWeight = {
             "weight": 10719.94
         },
         "6": {
-            "percentage": 0,
+            "percentage": 95,
             "weight": 0
-        },
-        "7": {
-            "percentage": 13.5,
-            "weight": 14066.62
         }
     },
     "natural": { //自然资源
