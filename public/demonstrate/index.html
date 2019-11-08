@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="font-size:62.5%">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,9 +16,9 @@
                 <div v-for="(item,index) in leftTopData" :key="index" class="circle-item">
                     <div :id="'inner-circle-' + (index + 1)" class="inner-circle"></div>
                     <div class="outer-circle">
-                        <p style="font-size:30px;">{{item.percentage}}%</p>
-                        <p style="font-size:16px;">{{item.weight}}kg</p>
-                        <p style="font-size:20px;">{{item.name}}</p>
+                        <p class="first">{{item.percentage}}%</p>
+                        <p class="second">{{item.weight}}kg</p>
+                        <p class="third">{{item.name}}</p>
                     </div>
                 </div>
             </div>
