@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+*:focus {
+    outline: none;
+}
+.register {
+    position: relative;
+    height: 100vh;
+}
+.register-top-pic {
+  width: 100vw;
+  height: 52vh;
+}
+.register-top {
+  text-align: center;
+  margin: 20px auto;
+  font-size: 18px;
+  font-weight: bold;
+}
+.green-font {
+  color: #009878;
+}
+.input-container {
+  position: relative;
+  margin-bottom: 12px;
+}
+.input-container input {
+  background-color: #DCDCDC;
+  width: 80%;
+  margin-left: 10%;
+  padding: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border:0;
+  font-size: 14px;
+}
+.input-container .code {
+  position: absolute;
+  right: 12vw;
+  color: #009878;
+  height: 36px;
+  line-height: 36px;
+  top: 0px;
+  z-index: 9;
+  font-size: 14px;
+}
+.register-contianer {
+  position: absolute;
+  bottom: 5vh;
+  left: 0;
+  right: 0;
+}
+.register-font {
+  font-size: 11px;
+  color: #999999;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.register-btn {
+  width: 80vw;
+  padding: 10px 0;
+  margin: auto;
+  text-align: center;
+  background-color: #009878;
+  color: #ffffff;
+  border-radius: 50px;
+  font-size: 19px;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  background-color: rgba(0,0,0,0.3);
+}
+.inner-modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255,255,255);
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+.modal-top {
+  text-align: center;
+  padding-top: 42px;
+}
+.modal-top .title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.modal-top .desc {
+  font-size: 11px;
+  color: #999999;
+}
+.modal-qrcode-container {
+  margin: 45px auto 30px;
+  text-align: center;
+}
+.modal-qrcode-container .app-con img {
+  width: 69px;
+  height: 69px;
+}
+.modal-qrcode-container .app-con p {
+    margin: 7.5px auto 47px;
+    font-size: 14px;
+}
+.modal-qrcode-container .tkx-android-btn,.modal-qrcode-container .tkx-ios-btn {
+  display: block;
+  width: 180px;
+  height: 50px;
+  margin:auto;
+  margin-bottom: 21px;
+}
+.modal-footer {
+  text-align: center;
+}
+.toast-modal {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    background-color: rgba(0,0,0,0.7);
+    color: #ffffff;
+    padding: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 14px;
+    border-radius: 5px;
+}

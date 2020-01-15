@@ -8,6 +8,8 @@ module.exports = {
         proxy: {
             '/bigData': { target: url,changeOrigin: true },
             '/getUserAgreement': { target: url,changeOrigin: true },
+            '/sendVerifyCode': { target: url,changeOrigin: true },
+            '/register': { target: url,changeOrigin: true },
         }
     }
 };

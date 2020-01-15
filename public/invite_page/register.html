@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/register.css">
+    <title>注册邀请</title>
+</head>
+<body>
+    <div class="register">
+        <div class="register-page">
+          <img class="register-top-pic" src="https://qiniu.spacemans.cn/invite_top.png"></img>
+          <div class="register-bottom-content">
+            <div class="register-top">
+              <span>注册成功即可领取</span>
+              <span class="green-font">能量币奖励</span>
+            </div>
+            <div class="register-input-container">
+              <div class="input-container">
+                <input v-model="phone" placeholder="请输入手机号" type="text"></input>
+              </div>
+              <div class="input-container">
+                <input v-model="code" placeholder="请输入验证码"></input>
+                <div @click="getCode" class="code">
+                  <span v-text="text"></span>
+                </div>
+              </div>
+            </div>
+            <div class="register-contianer">
+              <div class="register-font">
+                <span>点击注册即为同意</span>
+                <span @click="enterUserAgreement" class="green-font">《太空侠用户协议》</span>
+              </div>
+              <div @click="handleRegister" class="register-btn">
+                <span>注 册</span>
+              </div>
+            </div>
+          </div>
+          <!-- 注册成功弹框 -->
+          <div v-if="isRegister" class="modal" :style="{display:isRegister ? 'block' : 'none'}">
+            <div class="inner-modal">
+                <div class="modal-top">
+                  <div class="title">注册成功</div>
+                  <div class="desc">登陆app即可查收能量币</div>
+                </div>
+                <div class="modal-qrcode-container">
+                  <div class="app-con">
+                      <img src="https://qiniu.spacemans.cn/new_tkx_logo.png"></img>
+                      <p>太空侠智能回收</p>
+                  </div>
+                  <img class="tkx-android-btn" src="https://qiniu.spacemans.cn/tkx_android_btn.png"></img>
+                  <img class="tkx-ios-btn" src="https://qiniu.spacemans.cn/tkx_ios_btn.png"></img>
+                </div>
+                <div class="modal-footer">
+                  <div>点击下载太空侠app</div>
+                  <div class="green-font">开启环保新姿势</div>
+                </div>
+            </div>
+          </div>
+          <!-- toast -->
+          <div v-if="isToasting" class="toast-modal" :style="{display:isToasting ? 'block' : 'none'}">
+              <span v-text="toastText"></span>
+          </div>
+        </div>
+    </div>
+    <script src="./src/js/md5.min.js"></script>
+    <script src="./src/js/rsa.js"></script>
+    <script src="./src/js/jquery.min.js"></script>
+    <script src="./src/js/vue.js" charset="utf-8"></script>
+    <script src="./js/register.js" charset="utf-8"></script>
+</body>
+</html>
