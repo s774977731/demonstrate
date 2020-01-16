@@ -6,11 +6,11 @@ new Vue({
         isRegister:false,
         phone:'',
         code:'',
-        toastText:'请输入验证码',
+        toastText:'',
         isToasting:false
     },
     mounted:function() {
-        
+
     },
     methods:{
       //获取验证码

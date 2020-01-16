@@ -23,7 +23,7 @@
               <div class="input-container">
                 <input v-model="code" placeholder="请输入验证码"></input>
                 <div @click="getCode" class="code">
-                  <span v-text="text"></span>
+                  <span v-text="text || '获取验证码'"></span>
                 </div>
               </div>
             </div>
