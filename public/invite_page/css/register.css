@@ -30,6 +30,10 @@
   width: 80%;
   margin-left: 10%;
 }
+.input-container input.phone {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
 .input-container input {
   flex:1;
   background-color: #DCDCDC;
