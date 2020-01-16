@@ -11,7 +11,7 @@
 }
 .register-top-pic {
   width: 100vw;
-  height: 52vh;
+  height: 22rem;
 }
 .register-top {
   text-align: center;
@@ -62,7 +62,7 @@
 .register-btn {
   width: 80vw;
   padding: 10px 0;
-  margin: auto;
+  margin: 0px auto 30px;
   text-align: center;
   background-color: #009878;
   color: #ffffff;
