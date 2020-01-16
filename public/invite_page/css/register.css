@@ -25,26 +25,31 @@
 .input-container {
   position: relative;
   margin-bottom: 12px;
-}
-.input-container input {
-  background-color: #DCDCDC;
+  display: flex;
+  flex-direction: row;
   width: 80%;
   margin-left: 10%;
+}
+.input-container input {
+  flex:1;
+  background-color: #DCDCDC;
   padding: 10px;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   box-sizing: border-box;
   border:0;
   font-size: 14px;
 }
 .input-container .code {
-  position: absolute;
-  right: 12vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #009878;
-  height: 36px;
-  line-height: 36px;
-  top: 0px;
-  z-index: 9;
   font-size: 14px;
+  background-color: #DCDCDC;
+  padding: 0 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .register-contianer {
   /* position: absolute; */
