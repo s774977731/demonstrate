@@ -1,0 +1,114 @@
+.main-content {
+    top: 0px;
+    display: block;
+    position: relative !important;
+    /* overflow: auto; */
+    background-color: #eeeeee;
+}
+footer {
+    display: block;
+    position: relative !important;
+}
+.main-content form {
+    max-width: 1000px;
+    width: 50%;
+    margin-left: 25%;
+    text-align: left;
+    background-color: #ffffff;
+    padding: 30px 50px;
+    box-sizing: border-box;
+}
+form .big-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+form .sub-title {
+    font-size: 18px;
+    margin-top: 15px;
+}
+form .label-title {
+    font-size: 14px;
+}
+form ul {
+    padding-left: 30px;
+}
+form li {
+    display: flex;
+    margin-top: 10px;
+    line-height: 30px;
+}
+form li .label-title {
+    width: 220px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    /* white-space: nowrap; */
+}
+form li input {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ebebeb;
+}
+form li textarea {
+    width: 100%;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+form li.manage-address {
+    /* display: block; */
+}
+form li.manage-address .label-title {
+    display: inline-block;
+}
+form li.manage-address .right-address {
+    width: 100%;
+    display: inline-block;
+}
+form li.manage-address .right-address select {
+    width: 32.5%;
+    margin-bottom: 15px;
+    height: 30px;
+}
+form li.upload-content {
+    flex-direction: column;
+}
+form li.upload-content .upload-img {
+    width: 80px;
+    height: 80px;
+    margin-top: 30px;
+    margin-left: 100px;
+}
+form li.upload-content .upload-font {
+    width: 100%;
+    height: auto;
+}
+form li.upload-content .upload-img-font {
+    width: 100%;
+    height: auto;
+}
+form li.submit-container {
+    display: block;
+    text-align: center;
+}
+form li.submit-container input {
+    width: inherit;
+    position: relative;
+    top: 7px;
+}
+form li.submit-container label {
+    cursor: pointer;
+}
+form li.submit-container .submit-btn {
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    margin: auto;
+    padding: 5px 0;
+    text-align: center;
+    color: #ffffff;
+    background-color: #2ecc71;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
