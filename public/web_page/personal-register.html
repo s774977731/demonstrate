@@ -26,11 +26,11 @@
             <ul>
                 <li>
                     <p class="label-title">店铺名称：</p>
-                    <input placeholder="请输入名称" type="text" />
+                    <input id="name" placeholder="请输入名称" type="text" />
                 </li>
                 <li>
                     <p class="label-title">主营品类：</p>
-                    <select class="" name="" style="width:100%">
+                    <select id="main-category" class="" name="" style="width:100%">
                         <option value="0">请选择</option>
                         <option value="衣服">衣服</option>
                         <option value="袜子">袜子</option>
@@ -40,53 +40,53 @@
                     <p class="label-title">经营地址：</p>
                     <div class="right-address">
                         <div>
-                            <select placeholder="请选择省">
+                            <select id="province" placeholder="请选择省">
                                 <option value="0">请选择</option>
                             </select>
-                            <select placeholder="请选择市">
+                            <select id="city" placeholder="请选择市">
                                 <option value="0">请选择</option>
                             </select>
-                            <select placeholder="请选择区">
+                            <select id="area" placeholder="请选择区">
                                 <option value="0">请选择</option>
                             </select>
                         </div>
-                        <textarea name="name" rows="5" placeholder="请输入详细地址"></textarea>
+                        <textarea id="detail-address" name="name" rows="5" placeholder="请输入详细地址"></textarea>
                     </div>
                 </li>
                 <li>
                     <p class="label-title">配送范围：</p>
-                    <input placeholder="请输入配送范围" type="text" />
+                    <input id="distribute-area" placeholder="请输入配送范围" type="text" />
                 </li>
                 <li>
-                    <p class="label-title">主营品类：</p>
-                    <input placeholder="请选择店铺分类" type="text" />
+                    <p class="label-title">店铺分类：</p>
+                    <input id="type" placeholder="请选择店铺分类" type="text" />
                 </li>
             </ul>
             <p class="sub-title">联系人信息：</p>
             <ul>
                 <li>
                     <p class="label-title">联系人姓名：</p>
-                    <input placeholder="请输入联系人姓名" type="text" />
+                    <input id="user-name" placeholder="请输入联系人姓名" type="text" />
                 </li>
                 <li>
                     <p class="label-title">联系人手机号：</p>
-                    <input placeholder="请输入联系人手机号" type="text" />
+                    <input id="phone" placeholder="请输入联系人手机号" type="text" />
                 </li>
                 <li>
                     <p class="label-title">身份证：</p>
-                    <input placeholder="请输入身份证" type="text" />
+                    <input id="idcard" placeholder="请输入身份证" type="text" />
                 </li>
                 <li>
                     <p class="label-title">银行账号：</p>
-                    <input placeholder="请输入银行账号" type="text" />
+                    <input id="bank-account" placeholder="请输入银行账号" type="text" />
                 </li>
                 <li>
                     <p class="label-title">开户行：</p>
-                    <input placeholder="请输入开户行" type="text" />
+                    <input id="bank-name" placeholder="请输入开户行" type="text" />
                 </li>
                 <li>
                     <p class="label-title">银行预留号码：</p>
-                    <input placeholder="请输入银行预留号码" type="text" />
+                    <input id="bank-number" placeholder="请输入银行预留号码" type="text" />
                 </li>
                 <li class="upload-content">
                     <p>
@@ -94,9 +94,12 @@
                         <span class="label-title">手持身份证正面照片</span>
                     </p>
                     <div>
-                        <label for="upload-card-1">
+                        <label id="upload-img-con-no-pic-1" for="upload-card-1">
                             <img class="upload-img" src="./src/images/upload-img.png" alt="">
                             <p class="upload-img-font">上传图片</p>
+                        </label>
+                        <label id="upload-img-con-pic-1" for="upload-card-1" style="display:none">
+                            <img class="upload-img upload" src="" alt="">
                         </label>
                         <input id="upload-card-1" type="file" name="" value="" style="display:none"/>
                     </div>
@@ -110,9 +113,12 @@
                         <span class="label-title">手持身份证反面照</span>
                     </p>
                     <div>
-                        <label for="upload-card-2">
+                        <label id="upload-img-con-no-pic-2" for="upload-card-2">
                             <img class="upload-img" src="./src/images/upload-img.png" alt="">
                             <p class="upload-img-font">上传图片</p>
+                        </label>
+                        <label id="upload-img-con-pic-2" for="upload-card-2" style="display:none">
+                            <img class="upload-img upload" src="" alt="">
                         </label>
                         <input id="upload-card-2" type="file" name="" value="" style="display:none"/>
                     </div>
@@ -128,7 +134,7 @@
                             <span style="color:#2ecc71">《开店协议》</span>
                         </label>
                     </div>
-                    <div class="submit-btn">提交审核</div>
+                    <div id="submit-btn" class="submit-btn">提交审核</div>
                 </li>
             </ul>
         </form>
@@ -158,5 +164,41 @@
             </li>
         </ul>
     </footer>
+    <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $('#submit-btn').on('click',function () {
+            if(!$('#upload-card-1').get(0).files[0]) { alert('请上传手持身份证正面照片');return false; }
+            if(!$('#upload-card-2').get(0).files[0]) { alert('请上传手持身份证反面照片');return false; }
+            if(!$('#checkbox').is(':checked')) { alert('请先同意《开店协议》');return false; }
+        });
+        //手持身份证正面照
+        $('#upload-card-1').on('change', function () {
+            var file = this.files[0];//获取文件信息
+            if (window.FileReader) {
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                //监听文件读取结束后事件
+                reader.onloadend = function (e) {
+                    $('#upload-img-con-no-pic-1').hide();
+                    $('#upload-img-con-pic-1').show();
+                    $("#upload-img-con-pic-1 .upload-img").attr("src",e.target.result);
+                };
+            }
+        });
+        //手持身份证反面照
+        $('#upload-card-2').on('change', function () {
+            var file = this.files[0];//获取文件信息
+            if (window.FileReader) {
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                //监听文件读取结束后事件
+                reader.onloadend = function (e) {
+                    $('#upload-img-con-no-pic-2').hide();
+                    $('#upload-img-con-pic-2').show();
+                    $("#upload-img-con-pic-2 .upload-img").attr("src",e.target.result);
+                };
+            }
+        });
+    </script>
 </body>
 </html>

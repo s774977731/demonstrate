@@ -14,31 +14,88 @@
         <ul class="inner-content">
             <li>
                 <p class="subtitle">账号：</p>
-                <input type="text" placeholder="请输入手机号" />
+                <input id="account" type="text" placeholder="请输入账号" />
             </li>
             <li>
                 <p class="subtitle">密码：</p>
-                <input type="text" placeholder="请输入密码" />
+                <input id="password" type="password" placeholder="请输入密码" />
             </li>
             <li>
                 <p class="subtitle">重复密码：</p>
-                <input type="text" placeholder="请重复输入密码" />
+                <input id="repassword" type="password" placeholder="请重复输入密码" />
             </li>
             <li>
                 <p class="subtitle">手机号码：</p>
-                <input type="text" placeholder="请输入手机号码" />
+                <input id="phone" type="text" maxlength="11" placeholder="请输入手机号码" />
             </li>
             <li>
                 <p class="subtitle">验证码：</p>
                 <div class="code-content">
-                    <input type="text" placeholder="请输入验证码" />
-                    <div class="btn">点击获取验证码</div>
+                    <input id="code" type="text" placeholder="请输入验证码" />
+                    <div id="code-btn" class="btn">点击获取验证码</div>
                 </div>
             </li>
             <li>
-                <div class="login-btn">注册</div>
+                <div id="login-btn" class="login-btn">注册</div>
             </li>
         </ul>
     </div>
+    <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        var second = 60;
+        var loading = false;
+        $('#login-btn').on('click',function () {
+            var account = $('#account').val();
+            var password = $('#password').val();
+            var repassword = $('#repassword').val();
+            var phone = $('#phone').val();
+            var code = $('#code').val();
+            if(!account) { alert('请输入账号');return false; }
+            if(!password) { alert('请输入密码');return false; }
+            if(!repassword)  { alert('请重复输入密码');return false; }
+            if(password != repassword) { alert('两次输入的密码不一致');return false; }
+            if(!phone) { alert('请输入手机号码');return false; }
+            if(!code) { alert('请输入验证码');return false; }
+        });
+
+        $('#code-btn').on('click',function () {
+            getCode();
+        });
+
+        //获取验证码
+        function getCode() {
+            if(second != 60) return false;
+            var phone = $('#phone').val();
+            if(!phone) { alert('请输入手机号码');return false; }
+            if(!isPoneAvailable(phone)) { alert('请输入正确的手机号');return false; }
+            cutDown();
+        }
+
+        //倒计时
+        function cutDown() {
+            if(second == 0) {
+                second = 60;
+                $('#code-btn').html('点击获取验证码');
+                return false;
+            }else {
+                second--;
+                $('#code-btn').html('重新获取'+second+'s');
+            }
+            setTimeout(function() {
+                cutDown();
+            }, 1000);
+        }
+
+        //判断是否为手机
+        function isPoneAvailable($poneInput) {
+            var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
+            if (!myreg.test($poneInput)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+    </script>
 </body>
 </html>

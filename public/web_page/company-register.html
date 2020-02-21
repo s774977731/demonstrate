@@ -71,12 +71,15 @@
                 <li class="upload-content">
                     <p>
                         <span style="color:red">*</span>
-                        <span class="label-title">手持身份证正面照片</span>
+                        <span class="label-title">营业执照</span>
                     </p>
                     <div>
-                        <label for="upload-card-3">
+                        <label id="upload-img-con-no-pic-3" for="upload-card-3">
                             <img class="upload-img" src="./src/images/upload-img.png" alt="">
                             <p class="upload-img-font">上传图片</p>
+                        </label>
+                        <label id="upload-img-con-pic-3" for="upload-card-3" style="display:none">
+                            <img class="upload-img upload" src="" alt="">
                         </label>
                         <input id="upload-card-3" type="file" name="" value="" style="display:none"/>
                     </div>
@@ -89,35 +92,35 @@
                         <span style="color:red">*</span>
                         <span class="label-title">营业执照名称：</span>
                     </p>
-                    <input placeholder="请输入营业执照名称" type="text" />
+                    <input id="bussiness-license-name" placeholder="请输入营业执照名称" type="text" />
                 </li>
                 <li>
                     <p class="label-title">
                         <span style="color:red">*</span>
                         <span class="label-title">联系电话：</span>
                     </p>
-                    <input placeholder="请输入联系电话" type="text" />
+                    <input id="phone" placeholder="请输入联系电话" type="text" />
                 </li>
                 <li>
                     <p class="label-title">
                         <span style="color:red">*</span>
                         <span class="label-title">社会统一信用代码：</span>
                     </p>
-                    <input placeholder="请输入社会统一信用代码" type="text" />
+                    <input id="credit-code" placeholder="请输入社会统一信用代码" type="text" />
                 </li>
                 <li>
                     <p class="label-title">
                         <span style="color:red">*</span>
                         <span class="label-title">法定代表人/经营者：</span>
                     </p>
-                    <input placeholder="请输入法定代表人/经营者" type="text" />
+                    <input id="legal-representative" placeholder="请输入法定代表人/经营者" type="text" />
                 </li>
                 <li>
                     <p class="label-title">
                         <span style="color:red">*</span>
                         <span class="label-title">经营场所/住所：</span>
                     </p>
-                    <input placeholder="请输入经营场所/住所" type="text" />
+                    <input id="address" placeholder="请输入经营场所/住所" type="text" />
                 </li>
                 <li>
                     <p class="label-title">
@@ -138,7 +141,7 @@
                         <span style="color:red">*</span>
                         <span class="label-title">发证/登记机关：</span>
                     </p>
-                    <input placeholder="请输入发证/登记机关" type="text" />
+                    <input id="registrar" placeholder="请输入发证/登记机关" type="text" />
                 </li>
                 <li>
                     <p class="label-title">
@@ -179,9 +182,12 @@
                         <span class="label-title">手持身份证正面照片</span>
                     </p>
                     <div>
-                        <label for="upload-card-1">
+                        <label id="upload-img-con-no-pic-1" for="upload-card-1">
                             <img class="upload-img" src="./src/images/upload-img.png" alt="">
                             <p class="upload-img-font">上传图片</p>
+                        </label>
+                        <label id="upload-img-con-pic-1" for="upload-card-1" style="display:none">
+                            <img class="upload-img upload" src="" alt="">
                         </label>
                         <input id="upload-card-1" type="file" name="" value="" style="display:none"/>
                     </div>
@@ -195,9 +201,12 @@
                         <span class="label-title">手持身份证反面照</span>
                     </p>
                     <div>
-                        <label for="upload-card-2">
+                        <label id="upload-img-con-no-pic-2" for="upload-card-2">
                             <img class="upload-img" src="./src/images/upload-img.png" alt="">
                             <p class="upload-img-font">上传图片</p>
+                        </label>
+                        <label id="upload-img-con-pic-2" for="upload-card-2" style="display:none">
+                            <img class="upload-img upload" src="" alt="">
                         </label>
                         <input id="upload-card-2" type="file" name="" value="" style="display:none"/>
                     </div>
@@ -213,21 +222,21 @@
                         <span style="color:red">*</span>
                         <span class="label-title">姓名：</span>
                     </p>
-                    <input placeholder="请输入姓名" type="text" />
+                    <input id="name" placeholder="请输入姓名" type="text" />
                 </li>
                 <li>
                     <p class="label-title">
                         <span style="color:red">*</span>
                         <span class="label-title">身份证号：</span>
                     </p>
-                    <input placeholder="请输入身份证号" type="text" />
+                    <input id="idcard" placeholder="请输入身份证号" type="text" />
                 </li>
                 <li>
                     <p class="label-title">
                         <span style="color:red">*</span>
                         <span class="label-title">手机号：</span>
                     </p>
-                    <input placeholder="请输入手机号" type="text" />
+                    <input id="user-phone" placeholder="请输入手机号" type="text" />
                 </li>
                 <li class="submit-container">
                     <div>
@@ -237,7 +246,7 @@
                             <span style="color:#2ecc71">《开店协议》</span>
                         </label>
                     </div>
-                    <div class="submit-btn">提交审核</div>
+                    <div id="submit-btn" class="submit-btn">提交审核</div>
                 </li>
             </ul>
         </form>
@@ -271,6 +280,66 @@
     <script src="./src/js/selectui.js" charset="utf-8"></script>
     <script src="./src/js/lq.datepick.js" charset="utf-8"></script>
     <script type="text/javascript">
+        $('#submit-btn').on('click',function () {
+            if(!$('#upload-card-3').get(0).files[0]) { alert('请上传营业执照');return false; }
+            if(!$('#bussiness-license-name').val()) { alert('请输入营业执照名称');return false; }
+            if(!$('#phone').val()) { alert('请输入联系电话');return false; }
+            if(!$('#credit-code').val()) { alert('请输入社会统一信用代码');return false; }
+            if(!$('#legal-representative').val()) { alert('请输入法定代表人/经营者');return false; }
+            if(!$('#address').val()) { alert('请输入经营场所/住所');return false; }
+            if(!$('#datetimepicker').val()) { alert('请选择营业执照有效期');return false; }
+            if(!$('#datetimepicker1').val()) { alert('请选择注册成立时间');return false; }
+            if(!$('#registrar').val()) { alert('请输入发证/登记机关');return false; }
+            if(!$('#datetimepicker2').val()) { alert('请选择校准日期');return false; }
+            if(!$('#upload-card-1').get(0).files[0]) { alert('请上传手持身份证正面照片');return false; }
+            if(!$('#upload-card-2').get(0).files[0]) { alert('请上传手持身份证反面照片');return false; }
+            if(!$('#name').val()) { alert('请输入姓名');return false; }
+            if(!$('#idcard').val()) { alert('请输入身份证号');return false; }
+            if(!$('#user-phone').val()) { alert('请输入手机号');return false; }
+            if(!$('#checkbox').is(':checked')) { alert('请先同意《开店协议》');return false; }
+        });
+        //营业执照
+        $('#upload-card-3').on('change', function () {
+            var file = this.files[0];//获取文件信息
+            if (window.FileReader) {
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                //监听文件读取结束后事件
+                reader.onloadend = function (e) {
+                    $('#upload-img-con-no-pic-3').hide();
+                    $('#upload-img-con-pic-3').show();
+                    $("#upload-img-con-pic-3 .upload-img").attr("src",e.target.result);
+                };
+            }
+        });
+        //手持身份证正面照
+        $('#upload-card-1').on('change', function () {
+            var file = this.files[0];//获取文件信息
+            if (window.FileReader) {
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                //监听文件读取结束后事件
+                reader.onloadend = function (e) {
+                    $('#upload-img-con-no-pic-1').hide();
+                    $('#upload-img-con-pic-1').show();
+                    $("#upload-img-con-pic-1 .upload-img").attr("src",e.target.result);
+                };
+            }
+        });
+        //手持身份证反面照
+        $('#upload-card-2').on('change', function () {
+            var file = this.files[0];//获取文件信息
+            if (window.FileReader) {
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                //监听文件读取结束后事件
+                reader.onloadend = function (e) {
+                    $('#upload-img-con-no-pic-2').hide();
+                    $('#upload-img-con-pic-2').show();
+                    $("#upload-img-con-pic-2 .upload-img").attr("src",e.target.result);
+                };
+            }
+        });
         //营业执照有效期
         $("#datetimepicker").on("click",function(e){
     		e.stopPropagation();

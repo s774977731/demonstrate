@@ -79,6 +79,11 @@ form li.upload-content .upload-img {
     margin-top: 30px;
     margin-left: 100px;
 }
+form li.upload-content .upload-img.upload {
+    width: 100%;
+    margin-left: 0px;
+    height: auto;
+}
 form li.upload-content .upload-font {
     width: 100%;
     height: auto;
@@ -86,6 +91,8 @@ form li.upload-content .upload-font {
 form li.upload-content .upload-img-font {
     width: 100%;
     height: auto;
+    margin-left: 107px;
+    color: #edaa45;
 }
 form li.submit-container {
     display: block;
