@@ -1,3 +1,15 @@
+.main-content {
+    top: 0px;
+    display: block;
+    position: relative !important;
+    /* overflow: auto; */
+    background-color: #eeeeee;
+    padding: 100px;
+}
+footer {
+    display: block;
+    position: relative !important;
+}
 .store-title {
 
 }
@@ -9,13 +21,14 @@
     width: 300px;
     height: 180px;
 }
-.store-container {
+.store-container,.store-top-container {
     display: flex;
+    justify-content: center;
 }
 .store-title {
     font-size: 30px;
 }
-.store-container li {
+.store-container li,.store-top-container li {
     margin: 30px;
     background-color: #ffffff;
     cursor: pointer;
@@ -24,11 +37,15 @@
 .store-container li.active {
     border:2px solid #2ecc71;
 }
-.store-container li p {
+.store-top-container li.active {
+    border:2px solid #2ecc71;
+}
+.store-container li p,store-top-container li p {
     margin-bottom: 10px;
 }
 .no-radius {
     border-radius: 7px !important;
     cursor: pointer;
+    margin: auto;
     margin-top: 70px !important;
 }

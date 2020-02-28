@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/success.css">
+    <link rel="stylesheet" href="./css/select-store.css">
+    <title>太空侠</title>
+</head>
+<body>
+    <header class="header">
+        <img class="logo" src="./src/images/logo.png" alt="" />
+        <div class="right">
+            <img class="person-icon" src="./src/images/person-icon.png" alt="" />
+            <p class="person-font">15058089930</p>
+            <p class="login-out-btn">退出登录</p>
+        </div>
+    </header>
+    <div class="main-content">
+        <div>
+            <p class="store-title">请选择商家</p>
+            <ul class="store-top-container">
+                <li class="active">
+                    <img class="personal-store" src="./src/images/store-type-1.png" alt="" />
+                    <p>个人商家</p>
+                </li>
+                <li>
+                    <img class="personal-store" src="./src/images/store-type-2.png" alt="" />
+                    <p>企业商家</p>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <p class="store-title">请选择商家</p>
+            <ul class="store-container">
+                <li class="active">
+                    <img class="personal-store" src="./src/images/personal.png" alt="" />
+                    <p>个人商家</p>
+                </li>
+                <li>
+                    <img class="personal-store" src="./src/images/company.png" alt="" />
+                    <p>企业商家</p>
+                </li>
+            </ul>
+        </div>
+        <div class="btn no-radius">下一步</div>
+    </div>
+    <footer class="footer">
+        <ul>
+            <li>
+                <div class="green-font">新平台</div>
+                <div class="right">
+                    <p>互联网大数据平台</p>
+                    <p>物联网、移动平台</p>
+                </div>
+            </li>
+            <li>
+                <div class="green-font">新模式</div>
+                <div class="right">
+                    <p>有偿回收、有趣运营</p>
+                    <p>人工交互实现垃圾分类</p>
+                </div>
+            </li>
+            <li>
+                <div class="green-font">新生态</div>
+                <div class="right">
+                    <p>智能无人垃圾回收端</p>
+                    <p>再回收利用、垃圾资源化</p>
+                </div>
+            </li>
+        </ul>
+    </footer>
+    <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $('.store-top-container li').on('click',function () {
+            $('.store-top-container li').removeClass('active');
+            $(this).addClass('active');
+        });
+        $('.store-container li').on('click',function () {
+            $('.store-container li').removeClass('active');
+            $(this).addClass('active');
+        });
+    </script>
+</body>
+</html>
